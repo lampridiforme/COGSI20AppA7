@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+		* {
+			font-family:  Helvetica, Arial, Sans-Serif;
+		}
+
+    	body, p, div {
+    		padding: 0;
+    		margin: 0;
+    	}
+
+    	body {
+			width: 100%;
+			height: 100%;
+    	}
+
+		a:visited, a:hover, a:link {
+			text-decoration: none;
+			color: black;
+		}
+
+		.hoverMe:hover {
+    		background-color: skyblue;
+		}
+
+		.selected {
+			background-color: skyblue;
+			width: 20%;
+			height: 30px;
+			padding-top: 20px;
+			position: absolute;
+			left: 100px;
+		}
+
+		.navbar {
+			width: 100%;
+			height: 40px;
+			display: inline-block;
+			position: absolute;
+			top: 925px;
+			left: 0;
+		}
+
+    	.navbarElem {
+    		display: inline-block;
+    		width: 19.5%;
+    		padding-top: 20px;
+    		height: 100%;
+    		background-color: grey;
+    		margin-left: 0px;
+    		margin-right: 0px;
+    	}
+
+    	.navbarElem:hover {
+    		background-color: skyblue;
+    	}
+
+		.main {
+			width: 100%;
+		}
+
+		.calendar {
+			width: 100%;
+		}
+
+		.dow {
+			width: 100%;
+		}
+
+    	.day {
+    		background-color: grey;
+			display: inline-block;
+			position: absolute;
+			left: 0;
+			width: 20%;
+			padding-top: 40px;
+			height: 60px;
+			border-top-style: solid;
+			border-top-color: black;
+			border-top-width: 2px;
+			border-bottom-style: solid;
+			border-bottom-color: black;
+			border-bottom-width: 2px;
+    	}
+
+    	.dayContent {
+    		background-color: lightgrey;
+  			display: inline-block;
+  			position: absolute;
+  			left: 20%;
+  			width: 80%;
+  			padding-top: 40px;
+  			height: 60px;
+  			border-top-style: solid;
+  			border-top-color: black;
+  			border-top-width: 2px;
+  			border-bottom-style: solid;
+  			border-bottom-color: black;
+  			border-bottom-width: 2px;
+    	}
+
+      .event {
+        width: 100px;
+        height: 80px;
+        background-color: gold;
+        position: inherit;
+        top: 10px;
+        left: 30px;
+      }
+
+      .delete {
+        display: none;
+      }
+
+      #edit {
+        /* align-items: center; */
+        background-color: grey;
+        width: 20%;
+        height: 30px;
+        padding-top: 20px;
+        position: absolute;
+        left: 100px;
+        top: 140px;
+      }
+    </style>
+  </head>
+  <body style="text-align: center; width: 100%;">
+  	<div class="main">
+  		<div class="title">
+		  	<h1>Home/Calendar Page</h1>
+  		</div>
+
+      <div class="buttons" style="width: 100%; text-align: center;">
+  			<div class="selected">
+  				Calendar View
+  			</div>
+  			<div class="hoverMe" style="background-color: lightgrey; width: 20%; height: 30px; padding-top: 20px; position: absolute; right: 100px;">
+  				<a href="./homeList.html">List View</a>
+  			</div>
+
+  			<div id="edit" class="hoverMe" onclick="clickEdit()">
+  				Edit
+  			</div>
+  		</div>
+
+  		<div class="calendar">
+  			<div class="dow">
+  				<div class="day" style="top: 200px;">
+  					Sun
+  				</div>
+  				<div class="dayContent" style="top: 200px;">
+            <span class="add" onclick="clickAdd(this)"> Add </span>
+  				</div>
+  			</div>
+  			<div class="dow">
+  				<div class="day" style="top: 300px;">
+  					Mon
+  				</div>
+  				<div class="dayContent" style="top: 300px;">
+            <span class="add" onclick="clickAdd(this)"> Add </span>
+
+  				</div>
+  			</div>
+  			<div class="dow">
+  				<div class="day" style="top: 400px;">
+  					Tues
+  				</div>
+
+  				<div class="dayContent" style="top: 400px;">
+            <span class="add" onclick="clickAdd(this)"> Add </span>
+  					<div class="event">
+  						<a href="./recipeDetail.html" contenteditable="true">Cauliflower Pizza</a>
+              <span class="delete" onclick="clickDelete(this)"><br><br><b>Delete</b></span>
+  					</div>
+  				</div>
+  			</div>
+  			<div class="dow">
+  				<div class="day" style="top: 500px;">
+  					Wed
+  				</div>
+  				<div class="dayContent" style="top: 500px;">
+            <span class="add" onclick="clickAdd(this)"> Add </span>
+
+  				</div>
+  			</div>
+  			<div class="dow">
+  				<div class="day" style="top: 600px;">
+  					Thurs
+  				</div>
+  				<div class="dayContent" style="top: 600px;">
+            <span class="add" onclick="clickAdd(this)"> Add </span>
+
+  				</div>
+  			</div>
+  			<div class="dow">
+  				<div class="day" style="top: 700px;">
+  					Fri
+  				</div>
+  				<div class="dayContent" style="top: 700px;">
+            <span class="add" onclick="clickAdd(this)"> Add </span>
+
+  				</div>
+  			</div>
+  			<div class="dow">
+  				<div class="day" style="top: 800px;">
+  					Sat
+  				</div>
+  				<div class="dayContent" style="top: 800px;">
+            <span class="add" onclick="clickAdd(this)"> Add </span>
+
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+
+  	<div class="navbar">
+  		<div class="navbarElem" style="background-color: skyblue;">
+  			<a href="./index.html">Home</a>
+  		</div>
+  		<div class="navbarElem">
+  			<a href="./recipes.html">Recipes</a>
+  		</div>
+  		<div class="navbarElem">
+  			<a href="./list.html">Shopping List</a>
+  		</div>
+  		<div class="navbarElem">
+  			<a href="./inventory.html">Inventory</a>
+  		</div>
+  		<div class="navbarElem">
+	  		<a href="./budget.html">Budget</a>
+  		</div>
+  	</div>
+
+    <script>
+      function clickEdit() {
+        var x = document.getElementsByClassName("delete");
+        for (var i = 0; i < x.length; i++) {
+          x[i].style.display = "initial";
+        }
+      }
+
+      function clickDelete(button) {
+        var e = button.parentNode;
+        e.parentNode.removeChild(e);
+      }
+
+      function clickAdd(day) {
+        var d = day.parentNode;
+        d.innerHTML +=
+          '<div class="event"> \
+						<a href="./recipeDetail.html" contenteditable="true">Recipe Name</a> \
+            <span class="delete" onclick="clickDelete(this)"><br><br><b>Delete</b></span> \
+					</div>'
+      }
+    </script>
+  </body>
+</html>
